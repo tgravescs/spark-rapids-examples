@@ -126,6 +126,7 @@ public class NvidiaGPUMigPluginForRuntimeV2 implements DevicePlugin,
                         if (migInfoOutput == null) {
                             // we get the mig info for all the GPUs on the host so only get it once
                             migInfoOutput = shellExecutor.getDeviceMigInfo();
+                            LOG.info("MIG info output is: " + migInfoOutput);
                             if (migInfoOutput == null) {
                                 throw new Exception("MIG device enabled but no device info found");
                             }
